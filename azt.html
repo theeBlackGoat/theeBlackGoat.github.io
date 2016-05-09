@@ -1,15 +1,34 @@
 <!DOCTYPE html> 
 <html> 
 <head> 
-	<title>Cult of Azhorra-Tha</title> 
-	<meta name="viewport" content="width=device-width, initial-scale=1.0; maximum-scale=1.0; minimum-scale=1.0; user-scalable=no; target-densityDpi=device-dpi" /> 
+	<title>The Azhorra-Tha Group</title> 
+	<meta name="viewport" content="width=device-width, initial-scale=.5; maximum-scale=.5; minimum-scale=.5; user-scalable=no; target-densityDpi=device-dpi" /> 
 	<style>
-		#backtextimage {position:absolute; opacity: 1; left:0px; top:-75px; z-index:-1;} 
+	@media (max-width:720px) { 
+		#backtextimage1 {display:none;} 
+		#backtextimage2 {position:absolute; opacity: .5; left:0px; top:0px; z-index:-1;}
+		#twitbox {position:absolute; left:100px;} 
+		}
+	@media (min-width:721px) { 
+		#backtextimage1 { position:fixed; opacity: .5; left:40px; top:0px; z-index:-1;} 
+		#backtextimage2 {display:none;} 
+ 		#twitbox {position:fixed; left:1080px;} 
+		} 
 	</style>
 </head> 
 <body bgcolor="000000"> 
-<img id="backtextimage" src="file://C://theeBlackGoat.github.io//webback.png" > <br>
-<img id="backtextimage" src="webback.png"> <br>
-fuck
+<img id="backtextimage1" src="webback.png"> 
+<img id="backtextimage2" src="mblback.png"> 
+div id="twitbox" 
+<a class="twitter-timeline" href="https://twitter.com/azhorratha" data-widget-id="729421278273220609" data-chrome="noheader nofooter noborders transparent noscrollbar" width="100" height="100"></a> 
+<script>
+	!function(d,s,id){ 
+		var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https'; 
+		if(!d.getElementById(id)){ 
+			js=d.createElement(s);js.id=id;js.src=p+"://platform.twitter.com/widgets.js";fjs.parentNode.insertBefore(js,fjs);} 
+		} 
+	(document,"script","twitter-wjs"); 
+</script> 
+</div> 
 </body>
 </html>
