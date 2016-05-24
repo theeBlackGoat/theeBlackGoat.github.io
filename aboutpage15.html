@@ -1,0 +1,240 @@
+<!--snag arrows for the words from bing randomly in python -->
+<!--python scrape for text for all files-->
+<!--add special sentences-->
+<!--python cut up technique for pages of text-->
+<!--minor javascript cutup technique for the text-->
+<!DOCTYPE html>
+<html>
+<!--if word-break doesn't work there is also word-wrap, and white-space-->
+<head>
+	<meta name="viewport" content="width=device-width, initial-scale=1" />
+	<title>what is azhorra-tha?</title>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.2/jquery.min.js"></script>
+	<style>
+		div {position: absolute; top: 100%; left: 50%; 
+				transform: translate(-50%, -80%);} 
+		#prev {position: absolute; top: 100%; left: 0%; 
+				transform: translate(-200%, -50%);}	
+		#next {position: absolute; top: 100%; left: 100%; 
+				transform: translate(-50%, -50%);} 
+		#teext{top : 0%;
+				width: 50em;
+				border-style:solid;
+				white-space:normal;
+				word-wrap: wrap-all; 
+				}
+		#img1{width:129px;
+				opacity: 0.651369498051;}
+		#img2{width:129px;
+				opacity: 1.0518624241;}
+		#img3{width:373px;
+				opacity: 0.690866581193;}
+		#img4{width:124px;
+				opacity: 0.894378775982;}
+		#img5{width:330px;
+				opacity: 1.4219503513;}
+		#seal1{width:283px;
+				opacity: 0.664335947132;}
+		#seal2{width:166px;
+				opacity: 1.44508845329;}
+		h1{color:#ff0000; text-align: center;}
+		a{text-decoration:none;}
+		a:link{color:#ff0000;} 
+		a:visited{color:#ff0000;}
+		a:hover{color:#ff00f4;}
+	</style> 
+
+<script>
+var test       = ["piss","shit","fuck"];
+var testran    = test[Math.floor(Math.random()*test.length)];
+var pageswitch = Math.floor(Math.random()*2);
+var pageran    = Math.floor(Math.random()*20);//change to make the nav page go wrong
+var pRanIndex  = Math.floor(Math.random()*15); //insert the number from python in here 
+var pRanIndex2 = Math.floor(Math.random()*15); //and here
+var imgX   = [432, 799, 431, 694, 289]
+var imgY   = [-49, 48, -17, 50, -11]
+var imgnum = [1,2,3,4,5];
+
+$(document).ready(function(){
+//	$('p').html(testran);
+	var prevRUNN = Math.floor(Math.random()*5); //if the previous and next buttons should dodge your mouse
+	var nextRUNN = Math.floor(Math.random()*5);
+	jQuery.each( imgnum, function(i,val) {				//loop through every image
+		$('#img'+(i+1)).css('position','absolute');
+		$('#img'+(i+1)).css('top',((100*i)+imgY[i])+'px');
+	});
+	jQuery.each( imgX, function(i,val) {
+		$('#img'+(i+1)).css('left',val+'px');
+	});
+	$('#seal1').css('position','absolute');
+	$('#seal1').css('top','252px');
+	$('#seal1').css('left','39px');
+	$('#seal2').css('position','absolute');
+	$('#seal2').css('top','706px');
+	$('#seal2').css('left','-15px');
+
+	if (pageswitch == 1){
+		$('#prev').html('previous page');
+		$('#next').html('next page');
+		if (pageran > 3){
+			$('#prev').attr('href','aboutpage14.html');
+			$('#next').attr('href','aboutpage16.html');
+		}
+		if (pageran <= 3){
+			$('#prev').attr('href','aboutpage'+pRanIndex+'.html');
+			$('#next').attr('href','aboutpage'+pRanIndex2+'.html');
+		}
+	}
+	if (pageswitch == 0) {
+		$('#prev').html('next page');
+		$('#next').html('previous page');
+		if (pageran > 3){
+			$('#next').attr('href','aboutpage14.html');
+			$('#prev').attr('href','aboutpage16.html');
+		}
+		if (pageran <= 3){
+			$('#next').attr('href','aboutpage'+pRanIndex2+'.html');
+			$('#prev').attr('href','aboutpage'+pRanIndex+'.html');
+		}
+	}
+	if (prevRUNN == 1) {
+	$("#prev").mouseover(function(){
+		$("#prev").css("left",Math.floor(Math.random()*50)+'%');
+	});}
+	if (nextRUNN == 1) {
+	$("#next").mouseover(function(){
+		$("#next").css("left",(Math.floor(Math.random()*100)+50)+'%');
+	});}
+
+	$('#teext').load('cuttuppage15.txt');
+});
+
+</script>
+<!--python code function to randomly link to pages-->
+
+
+
+</head>
+<body>
+<img id="img1" src="http://thumb1.shutterstock.com/thumb_large/875551/398249338/stock-vector-cartoon-fun-amazing-character-scribble-love-with-red-heart-inside-cartoon-character-with-red-heart-398249338.jpg">
+<img id="img2" src="http://thumb1.shutterstock.com/thumb_large/2885419/367030940/stock-photo-business-handshake-and-business-people-vintage-tone-retro-filter-effect-soft-focus-low-light-367030940.jpg">
+<img id="img3" src="http://thumb9.shutterstock.com/thumb_large/2951464/399467872/stock-photo-crazy-face-crazy-face-crazy-face-crazy-face-crazy-face-crazy-face-crazy-face-crazy-face-crazy-face-399467872.jpg">
+<img id="img4" src="http://thumb101.shutterstock.com/thumb_large/2181548/223049857/stock-photo-business-conference-business-meeting-business-people-in-formalwear-discussing-something-while-223049857.jpg">
+<img id="img5" src="http://thumb7.shutterstock.com/thumb_large/1918610/302945699/stock-vector-symbols-smear-unusual-logo-unusual-icon-unusual-sign-unusual-symbol-unusual-emblem-unusual-302945699.jpg">
+	<div>
+		<h1 id="title"></h1>
+		<a id="prev"><pre></a> 
+		<a id="next"><pre></a> 
+		<p id="teext"></p>
+	</div>
+<script type="text/javascript" charset="utf-8">
+    // linear interpolation between two values a and b
+    // u controls amount of a/b and is in range [0.0,1.0]
+    lerp = function(a,b,u) {
+        return (1-u) * a + u * b;
+    };
+	var flashorfade = 0;
+	var epilepsy    = 0;
+    fade = function(element, start, end, duration) {
+      var interval = 10;
+      var steps = duration/interval;
+      var step_u = 1.0/steps;
+      var u = 0.0;
+      var theInterval = setInterval(function(){
+        if (u >= 1.0){ clearInterval(theInterval) }
+        var r = parseInt(lerp(start.r, end.r, u));
+        var g = parseInt(lerp(start.g, end.g, u));
+        var b = parseInt(lerp(start.b, end.b, u));
+        var colorname = 'rgb('+r+','+g+','+b+')';
+        textbox.style.setProperty('color', colorname);
+        u += step_u;
+      }, interval);
+    };
+
+    textbox = document.getElementById('teext'); //your element
+
+	bgfade = function(start, end, duration) {
+      var interval = 10;
+      var steps = duration/interval;
+      var step_u = 1.0/steps;
+      var u = 0.0;
+      var theInterval = setInterval(function(){
+        if (u >= 1.0){ clearInterval(theInterval) }
+        var r = parseInt(lerp(start.r, end.r, u));
+        var g = parseInt(lerp(start.g, end.g, u));
+        var b = parseInt(lerp(start.b, end.b, u));
+        var colorname = 'rgb('+r+','+g+','+b+')';
+		document.body.style.backgroundColor = colorname;
+        u += step_u;
+      }, interval);
+    };
+	bg = document.getElementById('body');
+
+	property = 'color'; //fading property	 //color = text color, background-color = background color
+	if (epilepsy == 0) {
+		startColor = {r:255, g:  255, b:  255};
+		endColor   = {r:  0, g:0, b:0};}
+	if (epilepsy == 1) {
+		startColor = {r: Math.floor(Math.random()*255), g: Math.floor(Math.random()*255), b: Math.floor(Math.random()*255)};
+		endColor   = {r: Math.floor(Math.random()*255), g: Math.floor(Math.random()*255), b: Math.floor(Math.random()*255)};}
+	recount();
+	downstroke();
+
+	function downstroke() {	
+		setTimeout(function(){
+			fade(textbox,startColor,endColor,1000);
+			bgfade(endColor,startColor,1000);
+			if (flashorfade == 0) {upstroke();}
+			if (flashorfade == 1) {upswing();}
+			epilepsy == Math.floor(Math.random()*2);
+		},2000);
+	}
+	function upstroke() {	
+		setTimeout(function(){
+			fade(textbox,endColor,startColor,1000);
+			bgfade(startColor,endColor,1000);
+			if (flashorfade == 0) {downstroke();}
+			if (flashorfade == 1) {downswing();}
+		},2000);
+	}
+	function downswing() {	
+		setTimeout(function(){
+			fade(textbox,startColor,endColor,200);
+			bgfade(endColor,startColor,200);
+			if (flashorfade == 0) {upstroke();}
+			if (flashorfade == 1) {upswing();}
+			epilepsy == Math.floor(Math.random()*2);
+		},200);
+	}
+	function upswing() {	
+		setTimeout(function(){
+			fade(textbox,endColor,startColor,200);
+			bgfade(startColor,endColor,200);
+			if (flashorfade == 0) {downstroke();}
+			if (flashorfade == 1) {downswing();}
+		},200);
+	}
+
+	function recount() {
+		setTimeout(function(){
+			flashorfade = Math.floor(Math.random()*2);
+			epilepsy = Math.floor(Math.random()*2);
+		if (epilepsy == 0) {
+			startColor = {r:255, g:  255, b:  255};
+			endColor   = {r:  0, g:0, b:0};}
+		if (epilepsy != 0) {
+			startColor = {r: Math.floor(Math.random()*255), g: Math.floor(Math.random()*255), b: Math.floor(Math.random()*255)};
+			endColor   = {r: Math.floor(Math.random()*255), g: Math.floor(Math.random()*255), b: Math.floor(Math.random()*255)};}		
+			recount();
+		},5000);
+	}
+
+</script>
+</body>
+</html>
+
+<!--<script src="http://ajax.aspnetcdn.com/ajax/jQuery/jquery-1.12.2.min.js"></script>-->
+<!--<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.2/jquery.min.js"></script>-->
+<!--<script src="jquery-1.12.2.min.js"></script>-->
+
+

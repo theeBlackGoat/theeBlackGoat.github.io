@@ -1,0 +1,240 @@
+<!--snag arrows for the words from bing randomly in python -->
+<!--python scrape for text for all files-->
+<!--add special sentences-->
+<!--python cut up technique for pages of text-->
+<!--minor javascript cutup technique for the text-->
+<!DOCTYPE html>
+<html>
+<!--if word-break doesn't work there is also word-wrap, and white-space-->
+<head>
+	<meta name="viewport" content="width=device-width, initial-scale=1" />
+	<title>what is azhorra-tha?</title>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.2/jquery.min.js"></script>
+	<style>
+		div {position: absolute; top: 100%; left: 50%; 
+				transform: translate(-50%, -50%);} 
+		#prev {position: absolute; top: 100%; left: 0%; 
+				transform: translate(-200%, -50%);}	
+		#next {position: absolute; top: 100%; left: 100%; 
+				transform: translate(-50%, -50%);} 
+		#teext{top : 25%;
+				width: 50em;
+				border-style:solid;
+				white-space:normal;
+				word-wrap: wrap-all; 
+				}
+		#img1{width:160px;
+				opacity: 1.26421082983;}
+		#img2{width:304px;
+				opacity: 0.759902100595;}
+		#img3{width:299px;
+				opacity: 1.04930843905;}
+		#img4{width:149px;
+				opacity: 1.4121742509;}
+		#img5{width:134px;
+				opacity: 0.898711358135;}
+		#seal1{width:373px;
+				opacity: 0.783735601265;}
+		#seal2{width:284px;
+				opacity: 0.758854557808;}
+		h1{color:#ff0000; text-align: center;}
+		a{text-decoration:none;}
+		a:link{color:#ff0000;} 
+		a:visited{color:#ff0000;}
+		a:hover{color:#ff00f4;}
+	</style> 
+
+<script>
+var test       = ["piss","shit","fuck"];
+var testran    = test[Math.floor(Math.random()*test.length)];
+var pageswitch = Math.floor(Math.random()*2);
+var pageran    = Math.floor(Math.random()*10);
+var pRanIndex  = Math.floor(Math.random()*17); //insert the number from python in here 
+var pRanIndex2 = Math.floor(Math.random()*17); //and here
+var imgX   = [162, 53, 520, 461, 223]
+var imgY   = [18, 37, 46, 25, -14]
+var imgnum = [1,2,3,4,5];
+
+$(document).ready(function(){
+//	$('p').html(testran);
+	var prevRUNN = Math.floor(Math.random()*5); //if the previous and next buttons should dodge your mouse
+	var nextRUNN = Math.floor(Math.random()*5);
+	jQuery.each( imgnum, function(i,val) {				//loop through every image
+		$('#img'+(i+1)).css('position','absolute');
+		$('#img'+(i+1)).css('top',((100*i)+imgY[i])+'px');
+	});
+	jQuery.each( imgX, function(i,val) {
+		$('#img'+(i+1)).css('left',val+'px');
+	});
+	$('#seal1').css('position','absolute');
+	$('#seal1').css('top','95px');
+	$('#seal1').css('left','-5px');
+	$('#seal2').css('position','absolute');
+	$('#seal2').css('top','166px');
+	$('#seal2').css('left','40px');
+
+	if (pageswitch == 1){
+		$('#prev').html('previous page');
+		$('#next').html('next page');
+		if (pageran > 3){
+			$('#prev').attr('href','aboutpage16.html');
+			$('#next').attr('href','aboutpage18.html');
+		}
+		if (pageran <= 3){
+			$('#prev').attr('href','aboutpage'+pRanIndex+'.html');
+			$('#next').attr('href','aboutpage'+pRanIndex2+'.html');
+		}
+	}
+	if (pageswitch == 0) {
+		$('#prev').html('next page');
+		$('#next').html('previous page');
+		if (pageran > 3){
+			$('#next').attr('href','aboutpage16.html');
+			$('#prev').attr('href','aboutpage18.html');
+		}
+		if (pageran <= 3){
+			$('#next').attr('href','aboutpage'+pRanIndex2+'.html');
+			$('#prev').attr('href','aboutpage'+pRanIndex+'.html');
+		}
+	}
+	if (prevRUNN == 1) {
+	$("#prev").mouseover(function(){
+		$("#prev").css("left",Math.floor(Math.random()*50)+'%');
+	});}
+	if (nextRUNN == 1) {
+	$("#next").mouseover(function(){
+		$("#next").css("left",(Math.floor(Math.random()*100)+50)+'%');
+	});}
+
+	$('#teext').load('cuttuppage17.txt');
+});
+
+</script>
+<!--python code function to randomly link to pages-->
+
+
+
+</head>
+<body>
+<img id="img1" src="http://thumb1.shutterstock.com/thumb_large/675367/315451910/stock-photo-table-setting-for-wedding-or-event-315451910.jpg">
+<img id="img2" src="http://thumb1.shutterstock.com/thumb_large/531898/376174984/stock-photo-pretty-young-woman-wearing-pink-skirt-and-flower-print-top-376174984.jpg">
+<img id="img3" src="http://thumb9.shutterstock.com/thumb_large/639644/252002356/stock-photo-wedding-flowers-decoration-in-the-restaurant-252002356.jpg">
+<img id="img4" src="http://thumb1.shutterstock.com/thumb_large/1445165/270618860/stock-photo-the-word-prom-printed-on-clothespin-clipped-cards-in-front-of-defocused-glowing-lights-270618860.jpg">
+<img id="img5" src="http://thumb1.shutterstock.com/thumb_large/57020/358833164/stock-photo-weird-biker-strange-biker-on-a-moped-driving-along-the-seashore-358833164.jpg">
+	<div>
+		<h1 id="title"></h1>
+		<a id="prev"><pre></a> 
+		<a id="next"><pre></a> 
+		<p id="teext"></p>
+	</div>
+<script type="text/javascript" charset="utf-8">
+    // linear interpolation between two values a and b
+    // u controls amount of a/b and is in range [0.0,1.0]
+    lerp = function(a,b,u) {
+        return (1-u) * a + u * b;
+    };
+	var flashorfade = 0;
+	var epilepsy    = 0;
+    fade = function(element, start, end, duration) {
+      var interval = 10;
+      var steps = duration/interval;
+      var step_u = 1.0/steps;
+      var u = 0.0;
+      var theInterval = setInterval(function(){
+        if (u >= 1.0){ clearInterval(theInterval) }
+        var r = parseInt(lerp(start.r, end.r, u));
+        var g = parseInt(lerp(start.g, end.g, u));
+        var b = parseInt(lerp(start.b, end.b, u));
+        var colorname = 'rgb('+r+','+g+','+b+')';
+        textbox.style.setProperty('color', colorname);
+        u += step_u;
+      }, interval);
+    };
+
+    textbox = document.getElementById('teext'); //your element
+
+	bgfade = function(start, end, duration) {
+      var interval = 10;
+      var steps = duration/interval;
+      var step_u = 1.0/steps;
+      var u = 0.0;
+      var theInterval = setInterval(function(){
+        if (u >= 1.0){ clearInterval(theInterval) }
+        var r = parseInt(lerp(start.r, end.r, u));
+        var g = parseInt(lerp(start.g, end.g, u));
+        var b = parseInt(lerp(start.b, end.b, u));
+        var colorname = 'rgb('+r+','+g+','+b+')';
+		document.body.style.backgroundColor = colorname;
+        u += step_u;
+      }, interval);
+    };
+	bg = document.getElementById('body');
+
+	property = 'color'; //fading property	 //color = text color, background-color = background color
+	if (epilepsy == 0) {
+		startColor = {r:255, g:  255, b:  255};
+		endColor   = {r:  0, g:0, b:0};}
+	if (epilepsy == 1) {
+		startColor = {r: Math.floor(Math.random()*255), g: Math.floor(Math.random()*255), b: Math.floor(Math.random()*255)};
+		endColor   = {r: Math.floor(Math.random()*255), g: Math.floor(Math.random()*255), b: Math.floor(Math.random()*255)};}
+	recount();
+	downstroke();
+
+	function downstroke() {	
+		setTimeout(function(){
+			fade(textbox,startColor,endColor,1000);
+			bgfade(endColor,startColor,1000);
+			if (flashorfade == 0) {upstroke();}
+			if (flashorfade == 1) {upswing();}
+			epilepsy == Math.floor(Math.random()*2);
+		},2000);
+	}
+	function upstroke() {	
+		setTimeout(function(){
+			fade(textbox,endColor,startColor,1000);
+			bgfade(startColor,endColor,1000);
+			if (flashorfade == 0) {downstroke();}
+			if (flashorfade == 1) {downswing();}
+		},2000);
+	}
+	function downswing() {	
+		setTimeout(function(){
+			fade(textbox,startColor,endColor,200);
+			bgfade(endColor,startColor,200);
+			if (flashorfade == 0) {upstroke();}
+			if (flashorfade == 1) {upswing();}
+			epilepsy == Math.floor(Math.random()*2);
+		},200);
+	}
+	function upswing() {	
+		setTimeout(function(){
+			fade(textbox,endColor,startColor,200);
+			bgfade(startColor,endColor,200);
+			if (flashorfade == 0) {downstroke();}
+			if (flashorfade == 1) {downswing();}
+		},200);
+	}
+
+	function recount() {
+		setTimeout(function(){
+			flashorfade = Math.floor(Math.random()*2);
+			epilepsy = Math.floor(Math.random()*2);
+		if (epilepsy == 0) {
+			startColor = {r:255, g:  255, b:  255};
+			endColor   = {r:  0, g:0, b:0};}
+		if (epilepsy != 0) {
+			startColor = {r: Math.floor(Math.random()*255), g: Math.floor(Math.random()*255), b: Math.floor(Math.random()*255)};
+			endColor   = {r: Math.floor(Math.random()*255), g: Math.floor(Math.random()*255), b: Math.floor(Math.random()*255)};}		
+			recount();
+		},5000);
+	}
+
+</script>
+</body>
+</html>
+
+<!--<script src="http://ajax.aspnetcdn.com/ajax/jQuery/jquery-1.12.2.min.js"></script>-->
+<!--<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.2/jquery.min.js"></script>-->
+<!--<script src="jquery-1.12.2.min.js"></script>-->
+
+
