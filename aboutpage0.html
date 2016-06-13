@@ -7,36 +7,40 @@
 <html>
 <!--if word-break doesn't work there is also word-wrap, and white-space-->
 <head>
-	<meta name="viewport" content="width=device-width, initial-scale=1" />
+	<meta name="viewport" content="width=device-width, initial-scale=.5; maximum-scale=.5; minimum-scale=.5, user-scalable=no; target-densityDpi=device-dpi" />
 	<title>what is azhorra-tha?</title>
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.2/jquery.min.js"></script>
 	<style>
-		div {position: absolute; top: 100%; left: 50%; 
-				transform: translate(-50%, -80%);} 
-		#prev {position: absolute; top: 100%; left: 0%; 
-				transform: translate(-200%, -50%);}	
-		#next {position: absolute; top: 100%; left: 100%; 
-				transform: translate(-50%, -50%);} 
-		#teext{top : 0%;
-				width: 50em;
-				border-style:solid;
-				white-space:normal;
-				word-wrap: wrap-all; 
-				}
-		#img1{width:118px;
-				opacity: 0.614173774418;}
-		#img2{width:248px;
-				opacity: 1.06384253103;}
-		#img3{width:306px;
-				opacity: 0.892586632275;}
-		#img4{width:343px;
-				opacity: 0.672741349291;}
-		#img5{width:240px;
-				opacity: 0.839048054971;}
-		#seal1{width:166px;
-				opacity: 0.621598225959;}
-		#seal2{width:309px;
-				opacity: 1.45328270589;}
+		@media(max-width:720px){ 
+			div {position: absolute; top: 400%; left: 50%; 
+					transform: translate(-50%, -80%);} 
+			#prev {position: absolute; top: 100%; left: 50%; font-size:20px; 
+					transform: translate(-200%, -50%); margin-bottom: 100px;} 
+			#next {position: absolute; top: 100%; left: 75%; font-size:20px; 
+					transform: translate(-50%, -50%); margin-bottom:100px;} 
+			#lowend {position: absolute; top: 102%; left: 0%; 
+					transform: translate(-50%, -50%);visibility:hidden;} 
+			#teext {top : 0%; font-size:28px; width:10em; border-style:solid; white-space:normal; 
+					word-wrap: wrap-all;} 
+		} 
+		@media(min-width:721px){ 
+			div {position: absolute; top: 100%; left: 50%; 
+					transform: translate(-50%,-80%);} 
+			#prev {position: absolute; top:100%; left: 0%; 
+					transform: translate(-200%,-50%); margin-bottom: 75px} 
+			#next {position: absolute; top: 100%; left: 100%; 
+					transform: translate(-50%, -50%); margin-bottom:75px;} 
+			#teext{top:0%; width: 50em; border-style:solid; white-space:normal; 
+					word-wrap: wrap-all;} 
+			#lowend {visibility: hidden;} 
+			} 
+		#img1{width:398px; opacity: 0.824168314389;}
+		#img2{width:125px; opacity: 1.19790003412;}
+		#img3{width:361px; opacity: 1.04108473216;}
+		#img4{width:325px; opacity: 1.42826064824;}
+		#img5{width:325px; opacity: 0.688088643681;}
+		#seal1{width:345px; opacity: 0.99558473728;}
+		#seal2{width:389px; opacity: 1.35933097231;}
 		h1{color:#ff0000; text-align: center;}
 		a{text-decoration:none;}
 		a:link{color:#ff0000;} 
@@ -51,8 +55,8 @@ var pageswitch = Math.floor(Math.random()*2);
 var pageran    = Math.floor(Math.random()*20);//change to make the nav page go wrong
 var pRanIndex  = Math.floor(Math.random()*0); //insert the number from python in here 
 var pRanIndex2 = Math.floor(Math.random()*0); //and here
-var imgX   = [726, 285, 226, 832, 842]
-var imgY   = [-15, 7, -13, 47, 17]
+var imgX   = [876, 709, 321, 676, 193]
+var imgY   = [28, -45, 1, -1, 19]
 var imgnum = [1,2,3,4,5];
 
 $(document).ready(function(){
@@ -67,11 +71,11 @@ $(document).ready(function(){
 		$('#img'+(i+1)).css('left',val+'px');
 	});
 	$('#seal1').css('position','absolute');
-	$('#seal1').css('top','319px');
-	$('#seal1').css('left','36px');
+	$('#seal1').css('top','836px');
+	$('#seal1').css('left','8px');
 	$('#seal2').css('position','absolute');
-	$('#seal2').css('top','988px');
-	$('#seal2').css('left','-45px');
+	$('#seal2').css('top','558px');
+	$('#seal2').css('left','-46px');
 
 	if (pageswitch == 1){
 		$('#prev').html('previous page');
@@ -116,15 +120,17 @@ $(document).ready(function(){
 
 </head>
 <body>
-<img id="img1" src="http://thumb9.shutterstock.com/thumb_large/71916/307077296/stock-photo-elegant-man-in-tuxedo-307077296.jpg">
-<img id="img2" src="http://thumb7.shutterstock.com/thumb_large/1918610/302945699/stock-vector-symbols-smear-unusual-logo-unusual-icon-unusual-sign-unusual-symbol-unusual-emblem-unusual-302945699.jpg">
-<img id="img3" src="http://thumb9.shutterstock.com/thumb_large/1185893/193059866/stock-photo-black-tie-on-a-white-background-193059866.jpg">
-<img id="img4" src="http://thumb1.shutterstock.com/thumb_large/1514144/360261488/stock-vector-funny-cubic-pets-set-360261488.jpg">
-<img id="img5" src="http://thumb9.shutterstock.com/thumb_large/425569/330017852/stock-photo-funny-baby-bow-with-skinned-elbow-and-one-wide-opened-eye-on-a-kitchen-background-near-the-bowl-of-330017852.jpg">
+<img id="seal1" src="ipos.png">
+<img id="img1" src="http://thumb1.shutterstock.com/thumb_large/852226/381697660/stock-vector-funny-wacky-doodle-characters-set-vintage-texture-vector-illustration-381697660.jpg">
+<img id="img2" src="http://thumb101.shutterstock.com/thumb_large/3944711/365696327/stock-vector-strange-picnic-365696327.jpg">
+<img id="img3" src="http://thumb7.shutterstock.com/thumb_large/2090963/373344421/stock-photo-banos-de-agua-santa-november-latin-adult-couple-dressed-formal-dancing-on-the-streets-of-373344421.jpg">
+<img id="img4" src="http://thumb9.shutterstock.com/thumb_large/2117717/372243112/stock-photo-cooperation-corporate-achievement-teamwork-concept-372243112.jpg">
+<img id="img5" src="http://thumb7.shutterstock.com/thumb_large/172105/329503259/stock-vector-dancing-young-couple-young-couple-dancing-ballroom-dance-colorful-vector-illustration-329503259.jpg">
 	<div>
-		<h1 id="title">Our Pledge</h1>
+		<h1 id="title">Azhorra-That and YOU</h1>
 		<a id="prev"><pre></a> 
 		<a id="next"><pre></a> 
+		<a id="lowend">this text doesnt show but is a necessary placeholder</a> 
 		<p id="teext"></p>
 	</div>
 <script type="text/javascript" charset="utf-8">

@@ -1,0 +1,206 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta name="viewport" content="width=device-width, initial-scale=.5; maximum-scale=.5; minimum-scale=.5; user-scalable=no; target-densityDpi=device-dpi" /> 
+	<title>The Prophets</title>
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.2/jquery.js"></script>
+	<style>
+		p{display:inline-block; margin-top:10px;}
+		@media (max-width:720px{ 
+			#teext{font-size:24px;} 
+			} 
+		@media (min-width:721px){ 
+			#teext{font-size:16px;} 
+			} 
+	</style>
+	
+</head>
+<body bgcolor="ffffff">
+	<p id="teext">throughout the ages our agents have always walked among you <br>
+	let it be known, this is a short list of the children of Azhorra-Tha</p> <br>
+
+<p id="prof0"></p>
+<p id="prof1"></p>
+<p id="prof2"></p>
+<p id="prof3"></p>
+<p id="prof4"></p>
+<p id="prof5"></p>
+<p id="prof6"></p>
+<p id="prof7"></p>
+<p id="prof8"></p>
+<p id="prof9"></p>
+<p id="prof10"></p>
+<p id="prof11"></p>
+<p id="prof12"></p>
+<p id="prof13"></p>
+<p id="prof14"></p>
+<p id="prof15"></p>
+<p id="prof16"></p>
+<p id="prof17"></p>
+<p id="prof18"></p>
+<p id="prof19"></p>
+<p id="prof20"></p>
+<p id="prof21"></p>
+<p id="prof22"></p>
+<p id="prof23"></p>
+<p id="prof24"></p>
+<p id="prof25"></p>
+<p id="prof26"></p>
+<p id="prof27"></p>
+<p id="prof28"></p>
+<p id="prof29"></p>
+<p id="prof30"></p>
+<p id="prof31"></p>
+<p id="prof32"></p>
+<p id="prof33"></p>
+<p id="prof34"></p>
+<p id="prof35"></p>
+<p id="prof36"></p>
+<p id="prof37"></p>
+<p id="prof38"></p>
+<p id="prof39"></p>
+<p id="prof40"></p>
+<p id="prof41"></p>
+<p id="prof42"></p>
+<p id="prof43"></p>
+<p id="prof44"></p>
+<p id="prof45"></p>
+<p id="prof46"></p>
+<p id="prof47"></p>
+<p id="prof48"></p>
+<p id="prof49"></p>
+<p id="prof50"></p>
+<p id="prof51"></p>
+<p id="prof52"></p>
+<p id="prof53"></p>
+<p id="prof54"></p>
+<p id="prof55"></p>
+<p id="prof56"></p>
+<p id="prof57"></p>
+	<script>
+	var plist = ['George Washington', 'Mick Jagger', 'Ronald Kent Shelp', 'The Warp Brothers', 'A Gas Station Tuna Sandwich', 'Stephen King', 'A Can of Paint', 'Mickey Hart', 'Marie Laveau', 'Seth Rogen', 'Christian Rosenkreuz', 'Nikola Tesla', 'Luigi Russolo', 'Hterazanfo Susej', 'Martin Luther', 'Aleister Crowley', 'David Lynch', 'Morgan Freeman', 'Spider-Man', 'Marcel Duchamp', 'Satoshi Kon lay in bed with the Great Insectoid Noise Frog', 'Johannes Kelpius', 'Sun Araw', 'Clark Ashton Smith', 'Plethodontohyla notosticta', 'Nelson Mandela has been granted immortality via the Infernal Noise Wave Infinitum thanks to Azhorra-Tha', 'Jabir ibn Hayyan', 'Genesis Breyer P-Orridge', 'Don Knotts', 'Gizzington McBear', 'John Jarvis', 'Charlie Chaplin', 'Lyonya Golubkov', 'Satya Nadella', 'Wang Cheng-teng', 'David Bowie', 'Steve Jobs', 'Reed Ghazala', 'Cetshwayo kaMpande has been a faithful servant of Azhorra-Tha', 'Martin Luther King Junior', 'Wolverine', 'General Butt Naked', 'Sun Ra', 'Jay Randall', 'Yamatsuka Eye', 'Earl Dewey Eisenhower', 'Megan Fox', 'John Cage', 'cEvin Key', 'Dante Alighieri', 'Elisha Gray', 'Supriya Pathare died and is reborn in magnificent servitude of Azhorra-Tha', 'Marie Curie', 'John Whiteside ParsonsRingo Starr', 'Al-Ghazali', 'Hypnotoad', 'Vermin Supreme', 'Wilfrid Voynich'];
+  var fsize = [46, 25, 31, 22, 84, 41, 200, 39, 13, 12, 26, 32, 134, 54, 45, 10, 18, 53, 53, 27, 47, 29, 48, 34, 13, 30, 20, 17, 33, 38, 33, 52, 41, 46, 58, 36, 51, 38, 31, 12, 27, 28, 36, 30, 46, 40, 29, 19, 38, 42, 60, 41, 14, 36, 48, 49, 29, 14];
+	plen = plist.length;
+	var colorb = [];
+	$(document).ready(function(){
+		for (i=0; i < plen; i++){
+			$('#prof'+i).html(plist[i]);
+			colorb[i] = "rgba("+Math.floor(Math.random()*255)+','+Math.floor(Math.random()*255)+','+Math.floor(Math.random()*255)+','+(Math.floor(Math.random()*100)/100)+')';
+			$('#prof'+i).css('background-color',colorb[i]);
+			$('#prof'+i).css('font-size',fsize[i]+'px');
+
+			}
+		wrdclr();
+		});
+
+			
+	function wrdclr() {
+		setTimeout(function(){
+			for (i=0; i < plen; i++){
+				colorb[i] = "rgba("+Math.floor(Math.random()*255)+','+Math.floor(Math.random()*255)+','+Math.floor(Math.random()*255)+','+(Math.floor(Math.random()*100)/100)+')';
+				$('#prof'+i).css('background-color',colorb[i]);
+				}	
+			wrdclr();
+			}, 25+Math.floor(Math.random()*1000));
+		}
+
+	</script>
+<script type="text/javascript" charset="utf-8">
+    // linear interpolation between two values a and b
+    // u controls amount of a/b and is in range [0.0,1.0]
+    lerp = function(a,b,u) {
+        return (1-u) * a + u * b;
+    };
+	var flashorfade = 0;
+	var epilepsy    = 0;
+    fade = function(element, start, end, duration) {
+      var interval = 10;
+      var steps = duration/interval;
+      var step_u = 1.0/steps;
+      var u = 0.0;
+      var theInterval = setInterval(function(){
+        if (u >= 1.0){ clearInterval(theInterval) }
+        var r = parseInt(lerp(start.r, end.r, u));
+        var g = parseInt(lerp(start.g, end.g, u));
+        var b = parseInt(lerp(start.b, end.b, u));
+        var colorname = 'rgb('+r+','+g+','+b+')';
+        textbox.style.setProperty('color', colorname);
+        u += step_u;
+      }, interval);
+    };
+    textbox = document.getElementById('teext'); //your element
+	bgfade = function(start, end, duration) {
+      var interval = 10;
+      var steps = duration/interval;
+      var step_u = 1.0/steps;
+      var u = 0.0;
+      var theInterval = setInterval(function(){
+        if (u >= 1.0){ clearInterval(theInterval) }
+        var r = parseInt(lerp(start.r, end.r, u));
+        var g = parseInt(lerp(start.g, end.g, u));
+        var b = parseInt(lerp(start.b, end.b, u));
+        var colorname = 'rgb('+r+','+g+','+b+')';
+		document.body.style.backgroundColor = colorname;
+        u += step_u;
+      }, interval);
+    };
+	bg = document.getElementById('body');
+	property = 'color'; //fading property	 //color = text color, background-color = background color
+	if (epilepsy == 0) {
+		startColor = {r:255, g:  255, b:  255};
+		endColor   = {r:  0, g:0, b:0};}
+	if (epilepsy == 1) {
+		startColor = {r: Math.floor(Math.random()*255), g: Math.floor(Math.random()*255), b: Math.floor(Math.random()*255)};
+		endColor   = {r: Math.floor(Math.random()*255), g: Math.floor(Math.random()*255), b: Math.floor(Math.random()*255)};}
+	recount();
+	downstroke();
+	function downstroke() {	
+		setTimeout(function(){
+			fade(textbox,startColor,endColor,1000);
+			bgfade(endColor,startColor,1000);
+			if (flashorfade == 0) {upstroke();}
+			if (flashorfade == 1) {upswing();}
+			epilepsy == Math.floor(Math.random()*2);
+		},2000);
+	}
+	function upstroke() {	
+		setTimeout(function(){
+			fade(textbox,endColor,startColor,1000);
+			bgfade(startColor,endColor,1000);
+			if (flashorfade == 0) {downstroke();}
+			if (flashorfade == 1) {downswing();}
+		},2000);
+	}
+	function downswing() {	
+		setTimeout(function(){
+			fade(textbox,startColor,endColor,200);
+			bgfade(endColor,startColor,200);
+			if (flashorfade == 0) {upstroke();}
+			if (flashorfade == 1) {upswing();}
+			epilepsy == Math.floor(Math.random()*2);
+		},200);
+	}
+	function upswing() {	
+		setTimeout(function(){
+			fade(textbox,endColor,startColor,200);
+			bgfade(startColor,endColor,200);
+			if (flashorfade == 0) {downstroke();}
+			if (flashorfade == 1) {downswing();}
+		},200);
+	}
+	function recount() {
+		setTimeout(function(){
+			flashorfade = Math.floor(Math.random()*2);
+			epilepsy = Math.floor(Math.random()*2);
+		if (epilepsy == 0) {
+			startColor = {r:255, g:  255, b:  255};
+			endColor   = {r:  0, g:0, b:0};}
+		if (epilepsy != 0) {
+			startColor = {r: Math.floor(Math.random()*255), g: Math.floor(Math.random()*255), b: Math.floor(Math.random()*255)};
+			endColor   = {r: Math.floor(Math.random()*255), g: Math.floor(Math.random()*255), b: Math.floor(Math.random()*255)};}		
+			recount();
+		},5000);
+	}
+</script>
+</body>
+</html>

@@ -7,36 +7,40 @@
 <html>
 <!--if word-break doesn't work there is also word-wrap, and white-space-->
 <head>
-	<meta name="viewport" content="width=device-width, initial-scale=1" />
+	<meta name="viewport" content="width=device-width, initial-scale=.5; maximum-scale=.5; minimum-scale=.5, user-scalable=no; target-densityDpi=device-dpi" />
 	<title>what is azhorra-tha?</title>
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.2/jquery.min.js"></script>
 	<style>
-		div {position: absolute; top: 100%; left: 50%; 
-				transform: translate(-50%, -80%);} 
-		#prev {position: absolute; top: 100%; left: 0%; 
-				transform: translate(-200%, -50%);}	
-		#next {position: absolute; top: 100%; left: 100%; 
-				transform: translate(-50%, -50%);} 
-		#teext{top : 0%;
-				width: 50em;
-				border-style:solid;
-				white-space:normal;
-				word-wrap: wrap-all; 
-				}
-		#img1{width:390px;
-				opacity: 1.34877556784;}
-		#img2{width:355px;
-				opacity: 1.18590527815;}
-		#img3{width:240px;
-				opacity: 1.24084817386;}
-		#img4{width:381px;
-				opacity: 0.879823216636;}
-		#img5{width:392px;
-				opacity: 0.865647048192;}
-		#seal1{width:183px;
-				opacity: 1.06352031267;}
-		#seal2{width:149px;
-				opacity: 0.87111563491;}
+		@media(max-width:720px){ 
+			div {position: absolute; top: 400%; left: 50%; 
+					transform: translate(-50%, -80%);} 
+			#prev {position: absolute; top: 100%; left: 50%; font-size:20px; 
+					transform: translate(-200%, -50%); margin-bottom: 100px;} 
+			#next {position: absolute; top: 100%; left: 75%; font-size:20px; 
+					transform: translate(-50%, -50%); margin-bottom:100px;} 
+			#lowend {position: absolute; top: 102%; left: 0%; 
+					transform: translate(-50%, -50%);visibility:hidden;} 
+			#teext {top : 0%; font-size:28px; width:10em; border-style:solid; white-space:normal; 
+					word-wrap: wrap-all;} 
+		} 
+		@media(min-width:721px){ 
+			div {position: absolute; top: 100%; left: 50%; 
+					transform: translate(-50%,-80%);} 
+			#prev {position: absolute; top:100%; left: 0%; 
+					transform: translate(-200%,-50%); margin-bottom: 75px} 
+			#next {position: absolute; top: 100%; left: 100%; 
+					transform: translate(-50%, -50%); margin-bottom:75px;} 
+			#teext{top:0%; width: 50em; border-style:solid; white-space:normal; 
+					word-wrap: wrap-all;} 
+			#lowend {visibility: hidden;} 
+			} 
+		#img1{width:392px; opacity: 1.07006580931;}
+		#img2{width:185px; opacity: 0.918070097568;}
+		#img3{width:259px; opacity: 0.925384363741;}
+		#img4{width:110px; opacity: 1.33180537968;}
+		#img5{width:199px; opacity: 1.33937640676;}
+		#seal1{width:165px; opacity: 1.11083357862;}
+		#seal2{width:226px; opacity: 1.09798362246;}
 		h1{color:#ff0000; text-align: center;}
 		a{text-decoration:none;}
 		a:link{color:#ff0000;} 
@@ -51,8 +55,8 @@ var pageswitch = Math.floor(Math.random()*2);
 var pageran    = Math.floor(Math.random()*20);//change to make the nav page go wrong
 var pRanIndex  = Math.floor(Math.random()*1); //insert the number from python in here 
 var pRanIndex2 = Math.floor(Math.random()*1); //and here
-var imgX   = [388, 253, 137, 957, 192]
-var imgY   = [47, 27, -11, 17, -49]
+var imgX   = [621, 523, 288, 739, 919]
+var imgY   = [40, -24, 42, -36, 46]
 var imgnum = [1,2,3,4,5];
 
 $(document).ready(function(){
@@ -67,11 +71,11 @@ $(document).ready(function(){
 		$('#img'+(i+1)).css('left',val+'px');
 	});
 	$('#seal1').css('position','absolute');
-	$('#seal1').css('top','404px');
-	$('#seal1').css('left','-29px');
+	$('#seal1').css('top','256px');
+	$('#seal1').css('left','-42px');
 	$('#seal2').css('position','absolute');
-	$('#seal2').css('top','839px');
-	$('#seal2').css('left','5px');
+	$('#seal2').css('top','226px');
+	$('#seal2').css('left','-17px');
 
 	if (pageswitch == 1){
 		$('#prev').html('previous page');
@@ -116,15 +120,18 @@ $(document).ready(function(){
 
 </head>
 <body>
-<img id="img1" src="http://thumb1.shutterstock.com/thumb_large/63356/258482408/stock-photo-studio-fashion-portrait-of-beautiful-lady-with-white-rabbit-258482408.jpg">
-<img id="img2" src="http://thumb9.shutterstock.com/thumb_large/55550/257495116/stock-photo-group-of-business-people-isolated-white-background-257495116.jpg">
-<img id="img3" src="http://thumb101.shutterstock.com/thumb_large/2373653/200640317/stock-vector-business-card-vector-background-200640317.jpg">
-<img id="img4" src="http://thumb101.shutterstock.com/thumb_large/2162366/300752207/stock-photo-face-shines-through-hands-double-exposure-300752207.jpg">
-<img id="img5" src="http://thumb101.shutterstock.com/thumb_large/1094306/180255623/stock-photo-dressed-up-teen-in-front-of-fancy-mirror-180255623.jpg">
+<img id="seal1" src="ipos.png">
+<img id="seal2" src="raum.png">
+<img id="img1" src="http://thumb9.shutterstock.com/thumb_large/3326366/303723392/stock-photo-metallic-wire-mesh-transform-into-flying-birds-over-the-sky-303723392.jpg">
+<img id="img2" src="http://thumb9.shutterstock.com/thumb_large/3413507/319704842/stock-photo-man-s-hands-touches-bow-tie-on-a-suit-319704842.jpg">
+<img id="img3" src="http://thumb101.shutterstock.com/thumb_large/64260/360894827/stock-photo-smiling-businesswoman-or-secretary-over-city-360894827.jpg">
+<img id="img4" src="http://thumb7.shutterstock.com/thumb_large/2908978/280551671/stock-vector-businessman-wearing-suits-280551671.jpg">
+<img id="img5" src="http://thumb101.shutterstock.com/thumb_large/3191603/293282573/stock-vector-vector-seamless-pattern-bicycles-and-backpacks-pink-orange-and-green-objects-on-light-beige-293282573.jpg">
 	<div>
-		<h1 id="title"></h1>
+		<h1 id="title">Here's what the government isn't telling you about Azhorra-Tha</h1>
 		<a id="prev"><pre></a> 
 		<a id="next"><pre></a> 
+		<a id="lowend">this text doesnt show but is a necessary placeholder</a> 
 		<p id="teext"></p>
 	</div>
 <script type="text/javascript" charset="utf-8">

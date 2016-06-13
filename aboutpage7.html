@@ -7,36 +7,40 @@
 <html>
 <!--if word-break doesn't work there is also word-wrap, and white-space-->
 <head>
-	<meta name="viewport" content="width=device-width, initial-scale=1" />
+	<meta name="viewport" content="width=device-width, initial-scale=.5; maximum-scale=.5; minimum-scale=.5, user-scalable=no; target-densityDpi=device-dpi" />
 	<title>what is azhorra-tha?</title>
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.2/jquery.min.js"></script>
 	<style>
-		div {position: absolute; top: 100%; left: 50%; 
-				transform: translate(-50%, -80%);} 
-		#prev {position: absolute; top: 100%; left: 0%; 
-				transform: translate(-200%, -50%);}	
-		#next {position: absolute; top: 100%; left: 100%; 
-				transform: translate(-50%, -50%);} 
-		#teext{top : 0%;
-				width: 50em;
-				border-style:solid;
-				white-space:normal;
-				word-wrap: wrap-all; 
-				}
-		#img1{width:218px;
-				opacity: 0.704050004954;}
-		#img2{width:271px;
-				opacity: 1.18881319931;}
-		#img3{width:294px;
-				opacity: 1.45134576947;}
-		#img4{width:155px;
-				opacity: 1.17549425362;}
-		#img5{width:137px;
-				opacity: 0.674576954263;}
-		#seal1{width:272px;
-				opacity: 1.15902380465;}
-		#seal2{width:157px;
-				opacity: 1.19525350867;}
+		@media(max-width:720px){ 
+			div {position: absolute; top: 400%; left: 50%; 
+					transform: translate(-50%, -80%);} 
+			#prev {position: absolute; top: 100%; left: 50%; font-size:20px; 
+					transform: translate(-200%, -50%); margin-bottom: 100px;} 
+			#next {position: absolute; top: 100%; left: 75%; font-size:20px; 
+					transform: translate(-50%, -50%); margin-bottom:100px;} 
+			#lowend {position: absolute; top: 102%; left: 0%; 
+					transform: translate(-50%, -50%);visibility:hidden;} 
+			#teext {top : 0%; font-size:28px; width:10em; border-style:solid; white-space:normal; 
+					word-wrap: wrap-all;} 
+		} 
+		@media(min-width:721px){ 
+			div {position: absolute; top: 100%; left: 50%; 
+					transform: translate(-50%,-80%);} 
+			#prev {position: absolute; top:100%; left: 0%; 
+					transform: translate(-200%,-50%); margin-bottom: 75px} 
+			#next {position: absolute; top: 100%; left: 100%; 
+					transform: translate(-50%, -50%); margin-bottom:75px;} 
+			#teext{top:0%; width: 50em; border-style:solid; white-space:normal; 
+					word-wrap: wrap-all;} 
+			#lowend {visibility: hidden;} 
+			} 
+		#img1{width:124px; opacity: 1.41947593181;}
+		#img2{width:204px; opacity: 1.2642569617;}
+		#img3{width:341px; opacity: 1.46910829498;}
+		#img4{width:251px; opacity: 0.770624883219;}
+		#img5{width:337px; opacity: 0.571134826433;}
+		#seal1{width:134px; opacity: 0.943218002761;}
+		#seal2{width:325px; opacity: 1.1898550898;}
 		h1{color:#ff0000; text-align: center;}
 		a{text-decoration:none;}
 		a:link{color:#ff0000;} 
@@ -51,8 +55,8 @@ var pageswitch = Math.floor(Math.random()*2);
 var pageran    = Math.floor(Math.random()*20);//change to make the nav page go wrong
 var pRanIndex  = Math.floor(Math.random()*7); //insert the number from python in here 
 var pRanIndex2 = Math.floor(Math.random()*7); //and here
-var imgX   = [488, 241, 761, 692, 127]
-var imgY   = [32, 9, 0, 33, -32]
+var imgX   = [797, 771, 614, 113, 291]
+var imgY   = [-44, 23, -23, -10, 46]
 var imgnum = [1,2,3,4,5];
 
 $(document).ready(function(){
@@ -67,11 +71,11 @@ $(document).ready(function(){
 		$('#img'+(i+1)).css('left',val+'px');
 	});
 	$('#seal1').css('position','absolute');
-	$('#seal1').css('top','998px');
-	$('#seal1').css('left','40px');
+	$('#seal1').css('top','20px');
+	$('#seal1').css('left','-9px');
 	$('#seal2').css('position','absolute');
-	$('#seal2').css('top','491px');
-	$('#seal2').css('left','34px');
+	$('#seal2').css('top','60px');
+	$('#seal2').css('left','-38px');
 
 	if (pageswitch == 1){
 		$('#prev').html('previous page');
@@ -116,15 +120,16 @@ $(document).ready(function(){
 
 </head>
 <body>
-<img id="img1" src="http://thumb9.shutterstock.com/thumb_large/1185893/193059866/stock-photo-black-tie-on-a-white-background-193059866.jpg">
-<img id="img2" src="http://thumb7.shutterstock.com/thumb_large/1939463/242579575/stock-photo-very-funny-puppy-bordeaux-mastiff-242579575.jpg">
-<img id="img3" src="http://thumb101.shutterstock.com/thumb_large/64260/360894827/stock-photo-smiling-businesswoman-or-secretary-over-city-360894827.jpg">
-<img id="img4" src="http://thumb101.shutterstock.com/thumb_large/109411/325432703/stock-photo-stop-arguing-meaning-be-at-odds-and-be-at-odds-325432703.jpg">
-<img id="img5" src="http://thumb101.shutterstock.com/thumb_large/339688/381458023/stock-vector-business-meeting-icons-business-meeting-logo-business-meeting-vector-business-meeting-flat-381458023.jpg">
+<img id="img1" src="http://thumb9.shutterstock.com/thumb_large/195826/407027866/stock-photo-business-handshake-business-handshake-and-business-people-concept-two-men-shaking-hands-over-407027866.jpg">
+<img id="img2" src="http://thumb9.shutterstock.com/thumb_large/2380424/268105052/stock-vector-black-tie-cocktails-vector-illustration-268105052.jpg">
+<img id="img3" src="http://thumb1.shutterstock.com/thumb_large/86649/283010294/stock-vector--lucky-dude-with-mustaches-sidewhiskers-and-gramophone-on-his-head-engraving-style-vector-283010294.jpg">
+<img id="img4" src="http://thumb101.shutterstock.com/thumb_large/305215/260910833/stock-photo-attractive-elegant-man-fixing-his-jacket-while-his-lover-is-holding-her-hand-around-her-waist-260910833.jpg">
+<img id="img5" src="http://thumb101.shutterstock.com/thumb_large/352144/274587887/stock-photo-conceptual-illustration-for-cover-of-book-or-card-with-a-girl-dreamcatcher-274587887.jpg">
 	<div>
-		<h1 id="title">Azhorra-That and YOU</h1>
+		<h1 id="title"></h1>
 		<a id="prev"><pre></a> 
 		<a id="next"><pre></a> 
+		<a id="lowend">this text doesnt show but is a necessary placeholder</a> 
 		<p id="teext"></p>
 	</div>
 <script type="text/javascript" charset="utf-8">

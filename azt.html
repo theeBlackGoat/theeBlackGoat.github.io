@@ -1,25 +1,165 @@
 <!DOCTYPE html> 
 <html> 
 <head> 
+<!--for some reason the text secrets only display when the file is inside the git repo--><script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.2/jquery.js"></script>
+<script src="//code.jquery.com/ui/1.11.4/jquery-ui.js"></script>
 	<title>The Azhorra-Tha Group</title> 
 	<meta name="viewport" content="width=device-width, initial-scale=.5; maximum-scale=.5; minimum-scale=.5; user-scalable=no; target-densityDpi=device-dpi" /> 
 	<style>
+		@font-face{ 
+			font-family: myFirstDrugFront;
+			src: url(Lovecrafts-Diary.ttf) format('truetype');}
+		@font-face{ 
+			font-family: blotout;
+			src: url(Sensuroitu.ttf) format('truetype');}
+		@font-face{ 
+			font-family: wingdings;
+			srec: url(Wingdings-Regular.ttf) format('truetype');}
+		@font-face{ 
+			font-family: ComeInsideMe;
+			src: url(WeComeInPeaceBB_reg.ttf) format('truetype');}
+		@font-face{ 
+			font-family: alienScratches;
+			src: url(LSW-Drachenklaue-Samys.ttf) format('truetype');}
 	@media (max-width:720px) { 
 		#backtextimage1 {display:none;} 
 		#backtextimage2 {position:absolute; opacity: .5; left:0px; top:0px; z-index:-1;}
-		#twitbox {position:absolute; left:100px;} 
+		#twitbox {position:absolute; left:450px;} 
+		#about{text-decoration:none; position: absolute; left:32%; font-size:24px;}
+		#joining{text-decoration:none; position: absolute; left:32%; top:350px; font-size:24px;}
+		#proph{text-decoration:none; position: absolute; left:32%; top:700px; font-size:24px;}
+		#io{position: absolute; left:32%; top:1150px; background-color:#ff0000; color:white; font-size:24px;}
 		}
 	@media (min-width:721px) { 
 		#backtextimage1 { position:fixed; opacity: .5; left:40px; top:0px; z-index:-1;} 
 		#backtextimage2 {display:none;} 
  		#twitbox {position:fixed; left:1080px;} 
+		#about{text-decoration:none; position: absolute; left:50%; font-size:16px;}
+		#joining{text-decoration:none; position: absolute; left:50%; top:200px; font-size:16px;}
+		#proph{text-decoration:none; position: absolute; left:50%; top:400px; font-size:16px;}
+		#io{visibility:hidden;}
 		} 
+	#about:link{color:#ff0000;} 
+	#about:visited{color:#ff0000;} 
+	#about:hover{color:#ff00f4;} 
+	#joining:link{color:#ff0000;} 
+	#joining:visited{color:#ff0000;} 
+	#joining:hover{color:#ff00f4;} 
+	#proph:link{color:#ff0000;} 
+	#proph:visited{color:#ff0000;} 
+	#proph:hover{color:#ff00f4;} 
 	</style>
 </head> 
 <body bgcolor="000000"> 
-<img id="backtextimage1" src="webback.png"> 
-<img id="backtextimage2" src="mblback.png"> 
-div id="twitbox" 
+<img id="backtextimage1" src="webbackGIF.gif"> 
+<img id="backtextimage2" src="mblbackGIF.gif"> 
+<div> 
+<a id="about" href="aboutpage0.html">about</a>
+<a id="joining" href="">join us</a>
+<a id="proph" href="prophets.html">prophets</a>
+<p id="secrets0"></p>	<p id="secrets1"></p>	<p id="secrets2"></p>	<p id="secrets3"></p>
+<p id="secrets4"></p>	<p id="secrets5"></p>	<p id="secrets6"></p>	<p id="secrets7"></p>
+<audio id="whispers" autoplay></audio>
+<script>
+	var wordspick= Math.floor(Math.random()*8);
+	var fontz    = ['myFirstDrugFront','blotout','wingdings','ComeInsideMe',
+			'alienScratches'];
+	var VO1CES  = [ 
+			'thee paradox is thee essence of life',
+			'we are the voices in the shadows',
+			'the noise will be deafening and insurmountable',
+			'our prophets are many and move in a hideous flash',
+			"shit dawg we're just mad as a bag of squirrels",
+			"your computer now has a virus",
+			'it locked itself away until the endtimes, our Overlord and Grand Terrorizer Azhorra-Tha',
+			"on Mars is where Azhorra-Tha lofts; deep within it's radio station / palace",
+			"from Mars Azhorra-Tha broadcasts it's psychoaural horrific commands",
+			"URGENT HELLO PLEASE HELP", //////////////////////////////////////////////////////////////////!!!!!!////!!!!!!!!!//////////////!!!!!///////////////!!!!!!!! ! !    !       !
+			"AZT group is a trap and a cult and I need out im blowing the whistle",
+			"HORRIBLE THINGS COMING",
+			"if are reading this and care about your safety and the saftey of the world",
+			"please check this page again on june 30th",
+			"i will release IMPORTANT information then wish i could release it sooner",
+			"june 30th i am in your gratitude",
+			"The wells are being choked in the land of free love",
+			"An agent of orange from the business of poison rises",
+			"Thee Final Conflict is Upon Us",
+			"Azhorra-Tha screaches out to you"
+		];
+	var flashorfade = 0;
+	var epilepsy    = 0;
+	var clr = 'rgba(0,0,0,0)';//'rgba('+Math.floor(Math.random()*255)+','+Math.floor(Math.random()*255)+',0,1)';
+	var gforms = ['https://docs.google.com/forms/d/1iESqqPf_Pqvx4r-PrXRctZ-JvVFpTEaQtGH7CRJ6Ba4/viewform',
+			'https://docs.google.com/forms/d/1O0eZ2f5tRur01MvgPJnqDiWftCA8XGEZDQV5Shmz1pY/viewform',
+			'https://docs.google.com/forms/d/1Bj5XnWC6o3IzbAZOxHi6Owvn_hsHFT0EV6oNjHxDQTo/viewform'];
+	var fAudio = ['52hz whale.wav', 'UVB76.wav', 'poolb.wav', 'rehtaerb nawom.wav', 'rehtaerb.wav', 'retlehs kees.wav',
+			'setadpu erom.wav', 'the bloop.wav', 'tsacdaord ycnegreme.wav', 'tset a ton.wav'];
+	function clrchange(){
+		timer1 = Math.floor(Math.random()*10000);
+		for (i=0; i<7; i++) {
+			$('#secrets'+i).css('left',Math.floor(Math.random()*1000)+'px');
+			$('#secrets'+i).css('top',Math.floor(Math.random()*500)+'px');
+			clr = 'rgba('+Math.floor(Math.random()*255)+','+Math.floor(Math.random()*255)+','+Math.floor(Math.random()*255)+',1)';
+			$('#secrets'+i).animate({
+				color:clr
+			},1000+Math.floor(Math.random()*2000));
+		}
+		setTimeout(function(){
+  			clrchange2();
+			}, 5000+Math.floor(Math.random()*10000));
+	};
+	function clrchange2(){
+		timer2 = Math.floor(Math.random()*10000); 
+		for (i=0; i<7; i++) {
+			$('#secrets'+i).css('left',Math.floor(Math.random()*1000)+'px');
+			$('#secrets'+i).css('top',Math.floor(Math.random()*500)+'px');
+			clr = 'rgba('+Math.floor(Math.random()*255)+','+Math.floor(Math.random()*255)+','+Math.floor(Math.random()*255)+',0)';
+			$('#secrets'+i).animate({
+				color:clr
+			},1000+Math.floor(Math.random()*2000));
+		}
+		setTimeout(function(){
+  			clrchange();
+			}, 5000+Math.floor(Math.random()*10000));
+	};
+	function whisptime1(){
+		timerup = Math.floor(Math.random()*10000);
+		$('#whispers').attr('src',fAudio[Math.floor(Math.random()*fAudio.length)]);
+		$('#whispers').attr('type','audio/wav');
+		setTimeout(function(){
+			whisptime2();
+			}, timerup+45000);
+		};
+	function whisptime2(){
+		timerup2 = Math.floor(Math.random()*10000);
+		$('#whispers').attr('src',fAudio[Math.floor(Math.random()*fAudio.length)]);
+		$('#whispers').attr('type','audio/wav');
+		setTimeout(function(){
+			whisptime1();
+			}, timerup2+45000);
+		};
+		
+	$(document).ready(function(){
+		$('#joining').attr('href',gforms[Math.floor(Math.random()*3)]);
+		for (i=0; i < 7; i++){
+			$('#secrets'+i).css('color','rgba(0,0,0,0)');
+			$('#secrets'+i).css('font-family',fontz[Math.floor(Math.random()*5)]);
+			$('#secrets'+i).css('position','absolute');
+			$('#secrets'+i).css('left',Math.floor(Math.random()*1000)+'px');
+			$('#secrets'+i).css('top',Math.floor(Math.random()*500)+'px');
+			if (wordspick >= i){
+				$('#secrets'+i).html(VO1CES[Math.floor(Math.random()*VO1CES.length)]);
+			}
+		}
+	setTimeout(function(){
+		whisptime1();	
+		}, 45000+Math.floor(Math.random()*10000));
+	setTimeout(function(){
+ 		clrchange();
+		}, 5000+Math.floor(Math.random()*5000));
+	});
+</script>
+<p id="twitbox">
 <a class="twitter-timeline" href="https://twitter.com/azhorratha" data-widget-id="729421278273220609" data-chrome="noheader nofooter noborders transparent noscrollbar" width="100" height="100"></a> 
 <script>
 	!function(d,s,id){ 
@@ -29,6 +169,20 @@ div id="twitbox"
 		} 
 	(document,"script","twitter-wjs"); 
 </script> 
+</p>
+<audio id="creepPlayer"></audio>
+<button id="io" type="button" onclick="alert('you have turned it on')">I/O</button>
+<script>
+$("#io").click(function() {
+	player = document.getElementById('whispers');
+	$( this ).slideUp();
+	player.autoplay = true;
+	player.play();
+	setTimeout(function(){
+		whisptime1();	
+		}, 45000+Math.floor(Math.random()*10000));
+		});
+</script>
 </div> 
 </body>
 </html>

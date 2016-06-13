@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>The Prophets</title>
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.2/jquery.js"></script>
+	<style>
+		p{display:inline-block;}
+	</style>
+	
+</head>
+<body bgcolor="ffffff">
+	<p id="teext">let it be known, this is a short list of the children of Azhorra-Tha</p> <br>
+
+	<p id="prof0"></p> 
+	<p id="prof1"></p>  <p id="prof2"></p>  <p id="prof3"></p>  <p id="prof4"></p>
+	<script>
+	var plist = ['Sun Ra','David Lynch', 'Elisha Gray', 'Mick Jagger','Clark Ashton Smith'];
+	plen = plist.length;
+	var colorb = [];
+//big words and describtors should generate in python
+//	var wordlist = [' bears the Mark of Azhorra-Tha', ' has been a faithful servant of Azhorra-Tha', 
+	$(document).ready(function(){
+		for (i=0; i < plen; i++){
+			$('#prof'+i).html(plist[i]);
+			colorb[i] = "rgba("+Math.floor(Math.random()*255)+','+Math.floor(Math.random()*255)+','+Math.floor(Math.random()*255)+','+(Math.floor(Math.random()*100)/100)+')';
+			$('#prof'+i).css('background-color',colorb[i]);
+			$('#prof'+i).css('font-size',12+(Math.floor(Math.random()*50))+'px');
+//			$('#prof'+i).css('font-size',20+(Math.floor(Math.random()*200))+'px');
+
+			}
+		wrdclr();
+		});
+
+			
+	function wrdclr() {
+		setTimeout(function(){
+			for (i=0; i < plen; i++){
+				colorb[i] = "rgba("+Math.floor(Math.random()*255)+','+Math.floor(Math.random()*255)+','+Math.floor(Math.random()*255)+','+(Math.floor(Math.random()*100)/100)+')';
+				$('#prof'+i).css('background-color',colorb[i]);
+				}	
+			wrdclr();
+			}, 25+Math.floor(Math.random()*1000));
+		}
+
+	</script>
+<script type="text/javascript" charset="utf-8">
+    // linear interpolation between two values a and b
+    // u controls amount of a/b and is in range [0.0,1.0]
+    lerp = function(a,b,u) {
+        return (1-u) * a + u * b;
+    };
+	var flashorfade = 0;
+	var epilepsy    = 0;
+    fade = function(element, start, end, duration) {
+      var interval = 10;
+      var steps = duration/interval;
+      var step_u = 1.0/steps;
+      var u = 0.0;
+      var theInterval = setInterval(function(){
+        if (u >= 1.0){ clearInterval(theInterval) }
+        var r = parseInt(lerp(start.r, end.r, u));
+        var g = parseInt(lerp(start.g, end.g, u));
+        var b = parseInt(lerp(start.b, end.b, u));
+        var colorname = 'rgb('+r+','+g+','+b+')';
+        textbox.style.setProperty('color', colorname);
+        u += step_u;
+      }, interval);
+    };
+    textbox = document.getElementById('teext'); //your element
+	bgfade = function(start, end, duration) {
+      var interval = 10;
+      var steps = duration/interval;
+      var step_u = 1.0/steps;
+      var u = 0.0;
+      var theInterval = setInterval(function(){
+        if (u >= 1.0){ clearInterval(theInterval) }
+        var r = parseInt(lerp(start.r, end.r, u));
+        var g = parseInt(lerp(start.g, end.g, u));
+        var b = parseInt(lerp(start.b, end.b, u));
+        var colorname = 'rgb('+r+','+g+','+b+')';
+		document.body.style.backgroundColor = colorname;
+        u += step_u;
+      }, interval);
+    };
+	bg = document.getElementById('body');
+	property = 'color'; //fading property	 //color = text color, background-color = background color
+	if (epilepsy == 0) {
+		startColor = {r:255, g:  255, b:  255};
+		endColor   = {r:  0, g:0, b:0};}
+	if (epilepsy == 1) {
+		startColor = {r: Math.floor(Math.random()*255), g: Math.floor(Math.random()*255), b: Math.floor(Math.random()*255)};
+		endColor   = {r: Math.floor(Math.random()*255), g: Math.floor(Math.random()*255), b: Math.floor(Math.random()*255)};}
+	recount();
+	downstroke();
+	function downstroke() {	
+		setTimeout(function(){
+			fade(textbox,startColor,endColor,1000);
+			bgfade(endColor,startColor,1000);
+			if (flashorfade == 0) {upstroke();}
+			if (flashorfade == 1) {upswing();}
+			epilepsy == Math.floor(Math.random()*2);
+		},2000);
+	}
+	function upstroke() {	
+		setTimeout(function(){
+			fade(textbox,endColor,startColor,1000);
+			bgfade(startColor,endColor,1000);
+			if (flashorfade == 0) {downstroke();}
+			if (flashorfade == 1) {downswing();}
+		},2000);
+	}
+	function downswing() {	
+		setTimeout(function(){
+			fade(textbox,startColor,endColor,200);
+			bgfade(endColor,startColor,200);
+			if (flashorfade == 0) {upstroke();}
+			if (flashorfade == 1) {upswing();}
+			epilepsy == Math.floor(Math.random()*2);
+		},200);
+	}
+	function upswing() {	
+		setTimeout(function(){
+			fade(textbox,endColor,startColor,200);
+			bgfade(startColor,endColor,200);
+			if (flashorfade == 0) {downstroke();}
+			if (flashorfade == 1) {downswing();}
+		},200);
+	}
+	function recount() {
+		setTimeout(function(){
+			flashorfade = Math.floor(Math.random()*2);
+			epilepsy = Math.floor(Math.random()*2);
+		if (epilepsy == 0) {
+			startColor = {r:255, g:  255, b:  255};
+			endColor   = {r:  0, g:0, b:0};}
+		if (epilepsy != 0) {
+			startColor = {r: Math.floor(Math.random()*255), g: Math.floor(Math.random()*255), b: Math.floor(Math.random()*255)};
+			endColor   = {r: Math.floor(Math.random()*255), g: Math.floor(Math.random()*255), b: Math.floor(Math.random()*255)};}		
+			recount();
+		},5000);
+	}
+</script>
+</body>
+</html>

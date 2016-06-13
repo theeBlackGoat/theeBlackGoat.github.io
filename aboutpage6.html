@@ -7,36 +7,40 @@
 <html>
 <!--if word-break doesn't work there is also word-wrap, and white-space-->
 <head>
-	<meta name="viewport" content="width=device-width, initial-scale=1" />
+	<meta name="viewport" content="width=device-width, initial-scale=.5; maximum-scale=.5; minimum-scale=.5, user-scalable=no; target-densityDpi=device-dpi" />
 	<title>what is azhorra-tha?</title>
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.2/jquery.min.js"></script>
 	<style>
-		div {position: absolute; top: 100%; left: 50%; 
-				transform: translate(-50%, -80%);} 
-		#prev {position: absolute; top: 100%; left: 0%; 
-				transform: translate(-200%, -50%);}	
-		#next {position: absolute; top: 100%; left: 100%; 
-				transform: translate(-50%, -50%);} 
-		#teext{top : 0%;
-				width: 50em;
-				border-style:solid;
-				white-space:normal;
-				word-wrap: wrap-all; 
-				}
-		#img1{width:246px;
-				opacity: 0.661248009045;}
-		#img2{width:330px;
-				opacity: 1.4845567586;}
-		#img3{width:262px;
-				opacity: 0.922808914764;}
-		#img4{width:147px;
-				opacity: 0.832609006506;}
-		#img5{width:245px;
-				opacity: 0.76580829258;}
-		#seal1{width:144px;
-				opacity: 0.813717830846;}
-		#seal2{width:226px;
-				opacity: 1.39529681143;}
+		@media(max-width:720px){ 
+			div {position: absolute; top: 400%; left: 50%; 
+					transform: translate(-50%, -80%);} 
+			#prev {position: absolute; top: 100%; left: 50%; font-size:20px; 
+					transform: translate(-200%, -50%); margin-bottom: 100px;} 
+			#next {position: absolute; top: 100%; left: 75%; font-size:20px; 
+					transform: translate(-50%, -50%); margin-bottom:100px;} 
+			#lowend {position: absolute; top: 102%; left: 0%; 
+					transform: translate(-50%, -50%);visibility:hidden;} 
+			#teext {top : 0%; font-size:28px; width:10em; border-style:solid; white-space:normal; 
+					word-wrap: wrap-all;} 
+		} 
+		@media(min-width:721px){ 
+			div {position: absolute; top: 100%; left: 50%; 
+					transform: translate(-50%,-80%);} 
+			#prev {position: absolute; top:100%; left: 0%; 
+					transform: translate(-200%,-50%); margin-bottom: 75px} 
+			#next {position: absolute; top: 100%; left: 100%; 
+					transform: translate(-50%, -50%); margin-bottom:75px;} 
+			#teext{top:0%; width: 50em; border-style:solid; white-space:normal; 
+					word-wrap: wrap-all;} 
+			#lowend {visibility: hidden;} 
+			} 
+		#img1{width:374px; opacity: 1.21613894863;}
+		#img2{width:345px; opacity: 0.621874893903;}
+		#img3{width:260px; opacity: 0.568842367467;}
+		#img4{width:218px; opacity: 0.805371163073;}
+		#img5{width:376px; opacity: 0.724856500263;}
+		#seal1{width:198px; opacity: 0.781949346485;}
+		#seal2{width:229px; opacity: 1.28844632709;}
 		h1{color:#ff0000; text-align: center;}
 		a{text-decoration:none;}
 		a:link{color:#ff0000;} 
@@ -51,8 +55,8 @@ var pageswitch = Math.floor(Math.random()*2);
 var pageran    = Math.floor(Math.random()*20);//change to make the nav page go wrong
 var pRanIndex  = Math.floor(Math.random()*6); //insert the number from python in here 
 var pRanIndex2 = Math.floor(Math.random()*6); //and here
-var imgX   = [908, 155, 307, 295, 478]
-var imgY   = [-8, -41, -16, 19, 45]
+var imgX   = [128, 94, 817, 74, 373]
+var imgY   = [-11, -45, -50, -25, -12]
 var imgnum = [1,2,3,4,5];
 
 $(document).ready(function(){
@@ -67,11 +71,11 @@ $(document).ready(function(){
 		$('#img'+(i+1)).css('left',val+'px');
 	});
 	$('#seal1').css('position','absolute');
-	$('#seal1').css('top','68px');
-	$('#seal1').css('left','40px');
+	$('#seal1').css('top','848px');
+	$('#seal1').css('left','35px');
 	$('#seal2').css('position','absolute');
-	$('#seal2').css('top','530px');
-	$('#seal2').css('left','-19px');
+	$('#seal2').css('top','950px');
+	$('#seal2').css('left','11px');
 
 	if (pageswitch == 1){
 		$('#prev').html('previous page');
@@ -116,15 +120,16 @@ $(document).ready(function(){
 
 </head>
 <body>
-<img id="img1" src="http://thumb7.shutterstock.com/thumb_large/513868/263459879/stock-photo-handsome-young-man-in-a-tuxedo-looking-at-the-camera-fashionable-clothing-clothing-for-the-263459879.jpg">
-<img id="img2" src="http://thumb101.shutterstock.com/thumb_large/124564/413001913/stock-photo-portrait-of-two-serious-male-adults-being-at-odds-indoors-413001913.jpg">
-<img id="img3" src="http://thumb1.shutterstock.com/thumb_large/57020/358833164/stock-photo-weird-biker-strange-biker-on-a-moped-driving-along-the-seashore-358833164.jpg">
-<img id="img4" src="http://thumb1.shutterstock.com/thumb_large/86649/283010294/stock-vector--lucky-dude-with-mustaches-sidewhiskers-and-gramophone-on-his-head-engraving-style-vector-283010294.jpg">
-<img id="img5" src="http://thumb1.shutterstock.com/thumb_large/3900026/392517244/stock-vector-simple-vector-black-and-red-icon-handshake-logo-for-business-web-finance-shaking-hands-icon-392517244.jpg">
+<img id="img1" src="http://thumb7.shutterstock.com/thumb_large/539572/264563135/stock-photo-fat-glamour-man-with-beard-takes-selfie-in-his-bedroom-264563135.jpg">
+<img id="img2" src="http://thumb7.shutterstock.com/thumb_large/1307398/321278849/stock-vector-unusual-person-in-the-crowd-concept-unusual-icon-image-unusual-logo-unusual-web-icon-unusual-321278849.jpg">
+<img id="img3" src="http://thumb9.shutterstock.com/thumb_large/91282/384641386/stock-photo-businessmen-shaking-hands-during-a-meeting-384641386.jpg">
+<img id="img4" src="http://thumb7.shutterstock.com/thumb_large/173680/291307871/stock-photo-surreal-hand-drawing-portrait-decorative-artwork-291307871.jpg">
+<img id="img5" src="http://thumb9.shutterstock.com/thumb_large/195826/407027866/stock-photo-business-handshake-business-handshake-and-business-people-concept-two-men-shaking-hands-over-407027866.jpg">
 	<div>
 		<h1 id="title"></h1>
 		<a id="prev"><pre></a> 
 		<a id="next"><pre></a> 
+		<a id="lowend">this text doesnt show but is a necessary placeholder</a> 
 		<p id="teext"></p>
 	</div>
 <script type="text/javascript" charset="utf-8">

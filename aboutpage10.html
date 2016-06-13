@@ -7,36 +7,40 @@
 <html>
 <!--if word-break doesn't work there is also word-wrap, and white-space-->
 <head>
-	<meta name="viewport" content="width=device-width, initial-scale=1" />
+	<meta name="viewport" content="width=device-width, initial-scale=.5; maximum-scale=.5; minimum-scale=.5, user-scalable=no; target-densityDpi=device-dpi" />
 	<title>what is azhorra-tha?</title>
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.2/jquery.min.js"></script>
 	<style>
-		div {position: absolute; top: 100%; left: 50%; 
-				transform: translate(-50%, -80%);} 
-		#prev {position: absolute; top: 100%; left: 0%; 
-				transform: translate(-200%, -50%);}	
-		#next {position: absolute; top: 100%; left: 100%; 
-				transform: translate(-50%, -50%);} 
-		#teext{top : 0%;
-				width: 50em;
-				border-style:solid;
-				white-space:normal;
-				word-wrap: wrap-all; 
-				}
-		#img1{width:125px;
-				opacity: 0.814043056093;}
-		#img2{width:314px;
-				opacity: 1.4081406607;}
-		#img3{width:160px;
-				opacity: 0.518110823709;}
-		#img4{width:252px;
-				opacity: 0.78504435985;}
-		#img5{width:108px;
-				opacity: 0.586755448303;}
-		#seal1{width:221px;
-				opacity: 0.74340925928;}
-		#seal2{width:306px;
-				opacity: 0.568447846348;}
+		@media(max-width:720px){ 
+			div {position: absolute; top: 400%; left: 50%; 
+					transform: translate(-50%, -80%);} 
+			#prev {position: absolute; top: 100%; left: 50%; font-size:20px; 
+					transform: translate(-200%, -50%); margin-bottom: 100px;} 
+			#next {position: absolute; top: 100%; left: 75%; font-size:20px; 
+					transform: translate(-50%, -50%); margin-bottom:100px;} 
+			#lowend {position: absolute; top: 102%; left: 0%; 
+					transform: translate(-50%, -50%);visibility:hidden;} 
+			#teext {top : 0%; font-size:28px; width:10em; border-style:solid; white-space:normal; 
+					word-wrap: wrap-all;} 
+		} 
+		@media(min-width:721px){ 
+			div {position: absolute; top: 100%; left: 50%; 
+					transform: translate(-50%,-80%);} 
+			#prev {position: absolute; top:100%; left: 0%; 
+					transform: translate(-200%,-50%); margin-bottom: 75px} 
+			#next {position: absolute; top: 100%; left: 100%; 
+					transform: translate(-50%, -50%); margin-bottom:75px;} 
+			#teext{top:0%; width: 50em; border-style:solid; white-space:normal; 
+					word-wrap: wrap-all;} 
+			#lowend {visibility: hidden;} 
+			} 
+		#img1{width:325px; opacity: 0.632907646538;}
+		#img2{width:279px; opacity: 0.501775784154;}
+		#img3{width:326px; opacity: 0.67519285155;}
+		#img4{width:237px; opacity: 0.796570311415;}
+		#img5{width:337px; opacity: 0.785216270313;}
+		#seal1{width:167px; opacity: 0.546493209689;}
+		#seal2{width:238px; opacity: 1.48310951357;}
 		h1{color:#ff0000; text-align: center;}
 		a{text-decoration:none;}
 		a:link{color:#ff0000;} 
@@ -51,8 +55,8 @@ var pageswitch = Math.floor(Math.random()*2);
 var pageran    = Math.floor(Math.random()*20);//change to make the nav page go wrong
 var pRanIndex  = Math.floor(Math.random()*10); //insert the number from python in here 
 var pRanIndex2 = Math.floor(Math.random()*10); //and here
-var imgX   = [78, 874, 584, 212, 637]
-var imgY   = [-8, 16, 37, 34, -42]
+var imgX   = [51, 744, 624, 927, 317]
+var imgY   = [-12, 16, -38, 36, 22]
 var imgnum = [1,2,3,4,5];
 
 $(document).ready(function(){
@@ -67,11 +71,11 @@ $(document).ready(function(){
 		$('#img'+(i+1)).css('left',val+'px');
 	});
 	$('#seal1').css('position','absolute');
-	$('#seal1').css('top','742px');
-	$('#seal1').css('left','-28px');
+	$('#seal1').css('top','680px');
+	$('#seal1').css('left','-26px');
 	$('#seal2').css('position','absolute');
-	$('#seal2').css('top','278px');
-	$('#seal2').css('left','-38px');
+	$('#seal2').css('top','111px');
+	$('#seal2').css('left','-4px');
 
 	if (pageswitch == 1){
 		$('#prev').html('previous page');
@@ -116,16 +120,16 @@ $(document).ready(function(){
 
 </head>
 <body>
-<img id="seal1" src="vapula.png">
-<img id="img1" src="http://thumb9.shutterstock.com/thumb_large/1051573/271075262/stock-photo-crazy-man-okay-sign-271075262.jpg">
-<img id="img2" src="http://thumb7.shutterstock.com/thumb_large/2581999/274527239/stock-vector-happy-couple-dancing-with-formal-suit-274527239.jpg">
-<img id="img3" src="http://thumb101.shutterstock.com/thumb_large/305215/260910833/stock-photo-attractive-elegant-man-fixing-his-jacket-while-his-lover-is-holding-her-hand-around-her-waist-260910833.jpg">
-<img id="img4" src="http://thumb7.shutterstock.com/thumb_large/646738/277496579/stock-vector-cartoon-face-background-277496579.jpg">
-<img id="img5" src="http://thumb1.shutterstock.com/thumb_large/852226/400655770/stock-vector-music-electronic-style-funny-wacky-doodle-set-contemporary-electronic-musical-instruments-400655770.jpg">
+<img id="img1" src="http://thumb101.shutterstock.com/thumb_large/64260/360894827/stock-photo-smiling-businesswoman-or-secretary-over-city-360894827.jpg">
+<img id="img2" src="http://thumb9.shutterstock.com/thumb_large/3326366/303723392/stock-photo-metallic-wire-mesh-transform-into-flying-birds-over-the-sky-303723392.jpg">
+<img id="img3" src="http://thumb101.shutterstock.com/thumb_large/1094306/180255623/stock-photo-dressed-up-teen-in-front-of-fancy-mirror-180255623.jpg">
+<img id="img4" src="http://thumb7.shutterstock.com/thumb_large/580903/397514065/stock-photo-green-tree-grows-against-the-odds-on-a-barren-rocky-cliff-face-397514065.jpg">
+<img id="img5" src="http://thumb7.shutterstock.com/thumb_large/195826/407029039/stock-photo-business-handshake-business-handshake-and-business-people-concept-two-men-shaking-hands-over-407029039.jpg">
 	<div>
 		<h1 id="title"></h1>
 		<a id="prev"><pre></a> 
 		<a id="next"><pre></a> 
+		<a id="lowend">this text doesnt show but is a necessary placeholder</a> 
 		<p id="teext"></p>
 	</div>
 <script type="text/javascript" charset="utf-8">

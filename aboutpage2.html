@@ -7,36 +7,40 @@
 <html>
 <!--if word-break doesn't work there is also word-wrap, and white-space-->
 <head>
-	<meta name="viewport" content="width=device-width, initial-scale=1" />
+	<meta name="viewport" content="width=device-width, initial-scale=.5; maximum-scale=.5; minimum-scale=.5, user-scalable=no; target-densityDpi=device-dpi" />
 	<title>what is azhorra-tha?</title>
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.2/jquery.min.js"></script>
 	<style>
-		div {position: absolute; top: 100%; left: 50%; 
-				transform: translate(-50%, -80%);} 
-		#prev {position: absolute; top: 100%; left: 0%; 
-				transform: translate(-200%, -50%);}	
-		#next {position: absolute; top: 100%; left: 100%; 
-				transform: translate(-50%, -50%);} 
-		#teext{top : 0%;
-				width: 50em;
-				border-style:solid;
-				white-space:normal;
-				word-wrap: wrap-all; 
-				}
-		#img1{width:274px;
-				opacity: 1.20493570314;}
-		#img2{width:265px;
-				opacity: 0.769689071163;}
-		#img3{width:108px;
-				opacity: 1.05216324047;}
-		#img4{width:189px;
-				opacity: 1.02634971205;}
-		#img5{width:153px;
-				opacity: 1.11044530091;}
-		#seal1{width:369px;
-				opacity: 0.865674799471;}
-		#seal2{width:318px;
-				opacity: 0.532317656029;}
+		@media(max-width:720px){ 
+			div {position: absolute; top: 400%; left: 50%; 
+					transform: translate(-50%, -80%);} 
+			#prev {position: absolute; top: 100%; left: 50%; font-size:20px; 
+					transform: translate(-200%, -50%); margin-bottom: 100px;} 
+			#next {position: absolute; top: 100%; left: 75%; font-size:20px; 
+					transform: translate(-50%, -50%); margin-bottom:100px;} 
+			#lowend {position: absolute; top: 102%; left: 0%; 
+					transform: translate(-50%, -50%);visibility:hidden;} 
+			#teext {top : 0%; font-size:28px; width:10em; border-style:solid; white-space:normal; 
+					word-wrap: wrap-all;} 
+		} 
+		@media(min-width:721px){ 
+			div {position: absolute; top: 100%; left: 50%; 
+					transform: translate(-50%,-80%);} 
+			#prev {position: absolute; top:100%; left: 0%; 
+					transform: translate(-200%,-50%); margin-bottom: 75px} 
+			#next {position: absolute; top: 100%; left: 100%; 
+					transform: translate(-50%, -50%); margin-bottom:75px;} 
+			#teext{top:0%; width: 50em; border-style:solid; white-space:normal; 
+					word-wrap: wrap-all;} 
+			#lowend {visibility: hidden;} 
+			} 
+		#img1{width:197px; opacity: 1.06433810453;}
+		#img2{width:229px; opacity: 0.867406092301;}
+		#img3{width:292px; opacity: 0.713940388041;}
+		#img4{width:136px; opacity: 1.33871822509;}
+		#img5{width:325px; opacity: 0.864931835103;}
+		#seal1{width:148px; opacity: 0.685761120352;}
+		#seal2{width:135px; opacity: 0.907478955911;}
 		h1{color:#ff0000; text-align: center;}
 		a{text-decoration:none;}
 		a:link{color:#ff0000;} 
@@ -51,8 +55,8 @@ var pageswitch = Math.floor(Math.random()*2);
 var pageran    = Math.floor(Math.random()*20);//change to make the nav page go wrong
 var pRanIndex  = Math.floor(Math.random()*2); //insert the number from python in here 
 var pRanIndex2 = Math.floor(Math.random()*2); //and here
-var imgX   = [456, 838, 108, 986, 117]
-var imgY   = [-1, 7, 40, -23, -20]
+var imgX   = [253, 100, 995, 830, 457]
+var imgY   = [36, -16, 16, -42, -32]
 var imgnum = [1,2,3,4,5];
 
 $(document).ready(function(){
@@ -67,11 +71,11 @@ $(document).ready(function(){
 		$('#img'+(i+1)).css('left',val+'px');
 	});
 	$('#seal1').css('position','absolute');
-	$('#seal1').css('top','740px');
-	$('#seal1').css('left','-14px');
+	$('#seal1').css('top','394px');
+	$('#seal1').css('left','-44px');
 	$('#seal2').css('position','absolute');
-	$('#seal2').css('top','39px');
-	$('#seal2').css('left','-22px');
+	$('#seal2').css('top','776px');
+	$('#seal2').css('left','30px');
 
 	if (pageswitch == 1){
 		$('#prev').html('previous page');
@@ -116,16 +120,18 @@ $(document).ready(function(){
 
 </head>
 <body>
-<img id="seal1" src="vapula.png">
-<img id="img1" src="http://thumb101.shutterstock.com/thumb_large/2181548/223049857/stock-photo-business-conference-business-meeting-business-people-in-formalwear-discussing-something-while-223049857.jpg">
-<img id="img2" src="http://thumb9.shutterstock.com/thumb_large/3413507/319704842/stock-photo-man-s-hands-touches-bow-tie-on-a-suit-319704842.jpg">
-<img id="img3" src="http://thumb9.shutterstock.com/thumb_large/2625313/333873956/stock-photo-the-backdrop-at-the-wedding-ceremony-with-background-people-use-in-wedding-day-333873956.jpg">
-<img id="img4" src="http://thumb1.shutterstock.com/thumb_large/852226/400655770/stock-vector-music-electronic-style-funny-wacky-doodle-set-contemporary-electronic-musical-instruments-400655770.jpg">
-<img id="img5" src="http://thumb1.shutterstock.com/thumb_large/852226/400655770/stock-vector-music-electronic-style-funny-wacky-doodle-set-contemporary-electronic-musical-instruments-400655770.jpg">
+<img id="seal1" src="ipos.png">
+<img id="seal2" src="raum.png">
+<img id="img1" src="http://thumb7.shutterstock.com/thumb_large/1918610/350808359/stock-vector-logo-circle-abstract-unusual-logo-unusual-icon-unusual-sign-unusual-symbol-unusual-emblem-350808359.jpg">
+<img id="img2" src="http://thumb1.shutterstock.com/thumb_large/675367/315451910/stock-photo-table-setting-for-wedding-or-event-315451910.jpg">
+<img id="img3" src="http://thumb101.shutterstock.com/thumb_large/305215/260910833/stock-photo-attractive-elegant-man-fixing-his-jacket-while-his-lover-is-holding-her-hand-around-her-waist-260910833.jpg">
+<img id="img4" src="http://thumb1.shutterstock.com/thumb_large/1445165/270618860/stock-photo-the-word-prom-printed-on-clothespin-clipped-cards-in-front-of-defocused-glowing-lights-270618860.jpg">
+<img id="img5" src="http://thumb7.shutterstock.com/thumb_large/1998197/311390639/stock-photo-quick-briefing-before-meeting-three-cheerful-young-business-people-talking-to-each-other-while-311390639.jpg">
 	<div>
-		<h1 id="title"></h1>
+		<h1 id="title">Our Story</h1>
 		<a id="prev"><pre></a> 
 		<a id="next"><pre></a> 
+		<a id="lowend">this text doesnt show but is a necessary placeholder</a> 
 		<p id="teext"></p>
 	</div>
 <script type="text/javascript" charset="utf-8">

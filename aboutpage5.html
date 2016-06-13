@@ -7,36 +7,40 @@
 <html>
 <!--if word-break doesn't work there is also word-wrap, and white-space-->
 <head>
-	<meta name="viewport" content="width=device-width, initial-scale=1" />
+	<meta name="viewport" content="width=device-width, initial-scale=.5; maximum-scale=.5; minimum-scale=.5, user-scalable=no; target-densityDpi=device-dpi" />
 	<title>what is azhorra-tha?</title>
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.2/jquery.min.js"></script>
 	<style>
-		div {position: absolute; top: 100%; left: 50%; 
-				transform: translate(-50%, -80%);} 
-		#prev {position: absolute; top: 100%; left: 0%; 
-				transform: translate(-200%, -50%);}	
-		#next {position: absolute; top: 100%; left: 100%; 
-				transform: translate(-50%, -50%);} 
-		#teext{top : 0%;
-				width: 50em;
-				border-style:solid;
-				white-space:normal;
-				word-wrap: wrap-all; 
-				}
-		#img1{width:108px;
-				opacity: 0.822757257716;}
-		#img2{width:285px;
-				opacity: 0.949113750698;}
-		#img3{width:277px;
-				opacity: 0.580447881905;}
-		#img4{width:235px;
-				opacity: 1.31478903754;}
-		#img5{width:391px;
-				opacity: 1.09170238416;}
-		#seal1{width:386px;
-				opacity: 1.06623556979;}
-		#seal2{width:322px;
-				opacity: 0.672707530269;}
+		@media(max-width:720px){ 
+			div {position: absolute; top: 400%; left: 50%; 
+					transform: translate(-50%, -80%);} 
+			#prev {position: absolute; top: 100%; left: 50%; font-size:20px; 
+					transform: translate(-200%, -50%); margin-bottom: 100px;} 
+			#next {position: absolute; top: 100%; left: 75%; font-size:20px; 
+					transform: translate(-50%, -50%); margin-bottom:100px;} 
+			#lowend {position: absolute; top: 102%; left: 0%; 
+					transform: translate(-50%, -50%);visibility:hidden;} 
+			#teext {top : 0%; font-size:28px; width:10em; border-style:solid; white-space:normal; 
+					word-wrap: wrap-all;} 
+		} 
+		@media(min-width:721px){ 
+			div {position: absolute; top: 100%; left: 50%; 
+					transform: translate(-50%,-80%);} 
+			#prev {position: absolute; top:100%; left: 0%; 
+					transform: translate(-200%,-50%); margin-bottom: 75px} 
+			#next {position: absolute; top: 100%; left: 100%; 
+					transform: translate(-50%, -50%); margin-bottom:75px;} 
+			#teext{top:0%; width: 50em; border-style:solid; white-space:normal; 
+					word-wrap: wrap-all;} 
+			#lowend {visibility: hidden;} 
+			} 
+		#img1{width:249px; opacity: 0.834207120824;}
+		#img2{width:138px; opacity: 1.22096903965;}
+		#img3{width:373px; opacity: 0.814611729811;}
+		#img4{width:338px; opacity: 1.33289263159;}
+		#img5{width:153px; opacity: 1.19947488269;}
+		#seal1{width:222px; opacity: 1.49606119413;}
+		#seal2{width:267px; opacity: 0.775980547765;}
 		h1{color:#ff0000; text-align: center;}
 		a{text-decoration:none;}
 		a:link{color:#ff0000;} 
@@ -51,8 +55,8 @@ var pageswitch = Math.floor(Math.random()*2);
 var pageran    = Math.floor(Math.random()*20);//change to make the nav page go wrong
 var pRanIndex  = Math.floor(Math.random()*5); //insert the number from python in here 
 var pRanIndex2 = Math.floor(Math.random()*5); //and here
-var imgX   = [160, 230, 250, 701, 219]
-var imgY   = [-16, -13, -25, 26, 10]
+var imgX   = [80, 428, 546, 129, 821]
+var imgY   = [35, -8, -31, 44, 26]
 var imgnum = [1,2,3,4,5];
 
 $(document).ready(function(){
@@ -67,11 +71,11 @@ $(document).ready(function(){
 		$('#img'+(i+1)).css('left',val+'px');
 	});
 	$('#seal1').css('position','absolute');
-	$('#seal1').css('top','248px');
-	$('#seal1').css('left','25px');
+	$('#seal1').css('top','510px');
+	$('#seal1').css('left','-18px');
 	$('#seal2').css('position','absolute');
-	$('#seal2').css('top','257px');
-	$('#seal2').css('left','50px');
+	$('#seal2').css('top','93px');
+	$('#seal2').css('left','-10px');
 
 	if (pageswitch == 1){
 		$('#prev').html('previous page');
@@ -116,16 +120,17 @@ $(document).ready(function(){
 
 </head>
 <body>
-<img id="seal1" src="vapula.png">
-<img id="img1" src="http://thumb9.shutterstock.com/thumb_large/84772/386677912/stock-photo-indian-asian-eastern-brunette-business-executive-woman-with-straight-hair-style-in-red-sleeveless-386677912.jpg">
-<img id="img2" src="http://thumb1.shutterstock.com/thumb_large/852226/381697660/stock-vector-funny-wacky-doodle-characters-set-vintage-texture-vector-illustration-381697660.jpg">
-<img id="img3" src="http://thumb1.shutterstock.com/thumb_large/2117717/361397258/stock-photo-meeting-corporate-success-brainstorming-teamwork-concept-361397258.jpg">
-<img id="img4" src="http://thumb7.shutterstock.com/thumb_large/2317874/258858875/stock-photo-roulette-258858875.jpg">
-<img id="img5" src="http://thumb1.shutterstock.com/thumb_large/852226/381697660/stock-vector-funny-wacky-doodle-characters-set-vintage-texture-vector-illustration-381697660.jpg">
+<img id="seal1" src="ipos.png">
+<img id="img1" src="http://thumb101.shutterstock.com/thumb_large/3850499/360108773/stock-photo-wedding-banquet-360108773.jpg">
+<img id="img2" src="http://thumb1.shutterstock.com/thumb_large/1286500/372502750/stock-vector-seamless-stylized-graphic-pattern-scandinavian-fun-ornament-cute-colorful-design-with-dots-and-372502750.jpg">
+<img id="img3" src="http://thumb7.shutterstock.com/thumb_large/1307398/321278849/stock-vector-unusual-person-in-the-crowd-concept-unusual-icon-image-unusual-logo-unusual-web-icon-unusual-321278849.jpg">
+<img id="img4" src="http://thumb9.shutterstock.com/thumb_large/1051573/271075262/stock-photo-crazy-man-okay-sign-271075262.jpg">
+<img id="img5" src="http://thumb7.shutterstock.com/thumb_large/1998197/311390639/stock-photo-quick-briefing-before-meeting-three-cheerful-young-business-people-talking-to-each-other-while-311390639.jpg">
 	<div>
-		<h1 id="title">Our Story</h1>
+		<h1 id="title"></h1>
 		<a id="prev"><pre></a> 
 		<a id="next"><pre></a> 
+		<a id="lowend">this text doesnt show but is a necessary placeholder</a> 
 		<p id="teext"></p>
 	</div>
 <script type="text/javascript" charset="utf-8">
